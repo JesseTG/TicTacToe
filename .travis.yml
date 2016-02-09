@@ -1,5 +1,12 @@
 language: java
 sudo: false
-jdk: 
+jdk:
   - openjdk7
   - oraclejdk7
+deploy:
+  provider: gae
+  keyfile: gae-secret.json
+  project: jtalaveragre-tic-tac-toe
+before_install:
+- openssl aes-256-cbc -K $encrypted_662077106e81_key -iv $encrypted_662077106e81_iv
+  -in gae-secret.json.enc -out gae-secret.json -d
