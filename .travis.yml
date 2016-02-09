@@ -3,12 +3,17 @@ sudo: false
 jdk:
   - openjdk7
   - oraclejdk7
+
+before_deploy:
+  - mvn appengine:update
+
 deploy:
   provider: gae
   keyfile: gae-secret.json
   project: jtalaveragre-tic-tac-toe
   config: src/main/webapp/WEB-INF/appengine-web.xml
-
+  on:
+    jdk: oraclejdk7
 cache:
   directories:
   - $HOME/.m2
