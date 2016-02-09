@@ -7,6 +7,7 @@ deploy:
   provider: gae
   keyfile: gae-secret.json
   project: jtalaveragre-tic-tac-toe
+  config: src/main/webapp/WEB-INF/appengine-web.xml
 
 cache:
   directories:
