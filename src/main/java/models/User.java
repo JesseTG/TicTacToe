@@ -4,6 +4,8 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 
+import etc.GameTurn;
+
 @Entity
 @Index
 public class User {
@@ -14,6 +16,10 @@ public class User {
     public String password;
     public String fullname;
     public boolean isAdmin;
+    public int wins;
+    public int losses;
+    public int ties;
+    public GameTurn nextStart;
     
     public User() {}
     
